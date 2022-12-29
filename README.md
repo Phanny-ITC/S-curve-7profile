@@ -8,8 +8,7 @@ To use this library, some configuration must be pre_config
 Then in your main fucntion
 
 2. Declare S_curve_t handler for each stepper
-	
-	eg., S_curve_t Stepper1;	
+	S_curve_t Stepper1;	
 3. Set timer for each stepper
 	
 	Accel_Stepper_SetTimer(&Stepper1, &htim7);	
