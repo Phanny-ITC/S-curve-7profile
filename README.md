@@ -9,7 +9,7 @@ Then in your main fucntion
 
 2. Declare S_curve_t handler for each stepper
 	
-	,S_curve_t Stepper1;	
+	eg, S_curve_t Stepper1;	
 3. Set timer for each stepper
 	
 	Accel_Stepper_SetTimer(&Stepper1, &htim7);	
