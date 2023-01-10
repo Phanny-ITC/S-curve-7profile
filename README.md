@@ -1,5 +1,6 @@
 # S-curve-7profile
 This library is base on STM32 for control stepper motors with smooth movement.
+For linear acceleration can be found at https://github.com/Phanny-ITC/STM32/tree/main/Accel_Stepper_STM32
 # Config
 To use this library, some configurations must be pre_config
 
