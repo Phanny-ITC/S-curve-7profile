@@ -1,17 +1,17 @@
 # S-curve-7profile
 This library is base on STM32 for control stepper motors with smooth movement.
 # Config
-To use this library, some configuration must be pre_config
+To use this library, some configurations must be pre_config
 
 1. 1MHz timer with interupt for each motor
 
 Then in your main fucntion
 
-2. Declare S_curve_t handler for each stepper
+2. Declaire S_curve_t handler for each stepper
 	```
 	 S_curve_t Stepper1;
 	```
-3. Set timer for each stepper
+3. Set timer for each steppers
 	```
 	Accel_Stepper_SetTimer(&Stepper1, &htim7);
 	```
@@ -22,10 +22,14 @@ Then in your main fucntion
 5. To run motor
 	```
 	if(Stepper1.run_status != 1){
-		Accel_Stepper_Move(&Stepper1, set_theta1, accel1, accel1, theta1dot);
+		Accel_Stepper_Move(&Stepper1, step_num, accel1, accel1, speed);
 	}
 	```
 6. In timer interrupt callback
 	```
-	Accel_Stepper_TIMIT_Handler(&Stepper1);	
+	void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+		if(htim->Instance == TIM7){//stepper 1
+			Accel_Stepper_TIMIT_Handler(&Stepper1);
+		}
+	}
 	```
